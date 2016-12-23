@@ -1,0 +1,2 @@
+# WZ_QQMusicPlayer
+仿QQ音乐播放器，项目播放的mp3文件及lrc文件均来自QQ音乐
