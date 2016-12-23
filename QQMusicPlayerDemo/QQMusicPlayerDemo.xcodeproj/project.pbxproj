@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C532DD51E0D121100909740 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C532DD41E0D121100909740 /* main.m */; };
+		4C532DE01E0D121100909740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C532DDF1E0D121100909740 /* Assets.xcassets */; };
+		4C532DE31E0D121100909740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C532DE11E0D121100909740 /* LaunchScreen.storyboard */; };
+		4C532DF11E0D130900909740 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C532DEF1E0D130900909740 /* AppDelegate.m */; };
+		4C532DF41E0D149000909740 /* WZMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C532DF31E0D149000909740 /* WZMainController.m */; };
+		4C532DF71E0D200F00909740 /* UIButton+WZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C532DF61E0D200F00909740 /* UIButton+WZAdd.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C532DD01E0D121100909740 /* QQMusicPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusicPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C532DD41E0D121100909740 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C532DDF1E0D121100909740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C532DE21E0D121100909740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C532DE41E0D121100909740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C532DEE1E0D130900909740 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C532DEF1E0D130900909740 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C532DF21E0D149000909740 /* WZMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZMainController.h; sourceTree = "<group>"; };
+		4C532DF31E0D149000909740 /* WZMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZMainController.m; sourceTree = "<group>"; };
+		4C532DF51E0D200F00909740 /* UIButton+WZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WZAdd.h"; sourceTree = "<group>"; };
+		4C532DF61E0D200F00909740 /* UIButton+WZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WZAdd.m"; sourceTree = "<group>"; };
+		4C532DF91E0D224C00909740 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C532DCD1E0D121100909740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C532DC71E0D121100909740 = {
+			isa = PBXGroup;
+			children = (
+				4C532DD21E0D121100909740 /* QQMusicPlayerDemo */,
+				4C532DD11E0D121100909740 /* Products */,
+				4C532DF81E0D224C00909740 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4C532DD11E0D121100909740 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C532DD01E0D121100909740 /* QQMusicPlayerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C532DD21E0D121100909740 /* QQMusicPlayerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4C532DEA1E0D130900909740 /* Classes */,
+				4C532DD31E0D121100909740 /* Supporting Files */,
+			);
+			path = QQMusicPlayerDemo;
+			sourceTree = "<group>";
+		};
+		4C532DD31E0D121100909740 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C532DDF1E0D121100909740 /* Assets.xcassets */,
+				4C532DE11E0D121100909740 /* LaunchScreen.storyboard */,
+				4C532DE41E0D121100909740 /* Info.plist */,
+				4C532DD41E0D121100909740 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C532DEA1E0D130900909740 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4C532DEB1E0D130900909740 /* Controller */,
+				4C532DEC1E0D130900909740 /* Model */,
+				4C532DED1E0D130900909740 /* Other */,
+				4C532DF01E0D130900909740 /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4C532DEB1E0D130900909740 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C532DF21E0D149000909740 /* WZMainController.h */,
+				4C532DF31E0D149000909740 /* WZMainController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4C532DEC1E0D130900909740 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C532DED1E0D130900909740 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				4C532DEE1E0D130900909740 /* AppDelegate.h */,
+				4C532DEF1E0D130900909740 /* AppDelegate.m */,
+				4C532DF51E0D200F00909740 /* UIButton+WZAdd.h */,
+				4C532DF61E0D200F00909740 /* UIButton+WZAdd.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		4C532DF01E0D130900909740 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C532DF81E0D224C00909740 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C532DF91E0D224C00909740 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C532DCF1E0D121100909740 /* QQMusicPlayerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C532DE71E0D121100909740 /* Build configuration list for PBXNativeTarget "QQMusicPlayerDemo" */;
+			buildPhases = (
+				4C532DCC1E0D121100909740 /* Sources */,
+				4C532DCD1E0D121100909740 /* Frameworks */,
+				4C532DCE1E0D121100909740 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QQMusicPlayerDemo;
+			productName = QQMusicPlayerDemo;
+			productReference = 4C532DD01E0D121100909740 /* QQMusicPlayerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C532DC81E0D121100909740 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WZ;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = songbiwen;
+				TargetAttributes = {
+					4C532DCF1E0D121100909740 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 8XMYBN9U4K;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4C532DCB1E0D121100909740 /* Build configuration list for PBXProject "QQMusicPlayerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C532DC71E0D121100909740;
+			productRefGroup = 4C532DD11E0D121100909740 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C532DCF1E0D121100909740 /* QQMusicPlayerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C532DCE1E0D121100909740 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C532DE31E0D121100909740 /* LaunchScreen.storyboard in Resources */,
+				4C532DE01E0D121100909740 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C532DCC1E0D121100909740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C532DF41E0D149000909740 /* WZMainController.m in Sources */,
+				4C532DD51E0D121100909740 /* main.m in Sources */,
+				4C532DF71E0D200F00909740 /* UIButton+WZAdd.m in Sources */,
+				4C532DF11E0D130900909740 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C532DE11E0D121100909740 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C532DE21E0D121100909740 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C532DE51E0D121100909740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C532DE61E0D121100909740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C532DE81E0D121100909740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8XMYBN9U4K;
+				INFOPLIST_FILE = QQMusicPlayerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.renhedao.QQMusicPlayerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4C532DE91E0D121100909740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8XMYBN9U4K;
+				INFOPLIST_FILE = QQMusicPlayerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.renhedao.QQMusicPlayerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C532DCB1E0D121100909740 /* Build configuration list for PBXProject "QQMusicPlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C532DE51E0D121100909740 /* Debug */,
+				4C532DE61E0D121100909740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C532DE71E0D121100909740 /* Build configuration list for PBXNativeTarget "QQMusicPlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C532DE81E0D121100909740 /* Debug */,
+				4C532DE91E0D121100909740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C532DC81E0D121100909740 /* Project object */;
+}
