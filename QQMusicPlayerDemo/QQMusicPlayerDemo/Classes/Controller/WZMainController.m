@@ -7,69 +7,45 @@
 //
 
 #import "WZMainController.h"
-#import "UIButton+WZAdd.h"
-
-#define ScreenWidth [UIScreen mainScreen].bounds.size.width
-#define ScreenHeight [UIScreen mainScreen].bounds.size.height
-#define CommonButtonW 64
-#define CommonButtonH 64
-#define DefaultMargin 20
+#import "WZAudioPlayer.h"
+#import "WZMusicModel.h"
 
 @interface WZMainController ()
-
+@property (nonatomic, strong) WZAudioPlayer *audioPlayer;
 @end
 
+/*
+ @property (nonatomic, copy) NSString *singerName;
+ @property (nonatomic, copy) NSString *songName;
+ 
+ */
 @implementation WZMainController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.view.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"lyric_tipview_backimg"].CGImage);
+    NSDictionary *dic = @{@"singerName":@"蔡健雅",@"songName":@"蔡健雅-红色高跟鞋 (《爱情左右》电影主题曲)"};
+    WZMusicModel *musicMolde = [[WZMusicModel alloc] initWithDict:dic];
     
-    [self setupUI];
-}
-
-
-- (void)setupUI {
+    NSDictionary *dic1 = @{@"singerName":@"陈粒",@"songName":@"陈粒-奇妙能力歌"};
+    WZMusicModel *musicMolde1 = [[WZMusicModel alloc] initWithDict:dic1];
     
-    //计算上一曲 播放 下一曲按钮之间的间距
-    CGFloat buttonMargin = (ScreenWidth - CommonButtonW * 3) * 1.0 / 4;
+    NSDictionary *dic2 = @{@"singerName":@"陈翔",@"songName":@"陈翔-烟火 (《旋风少女》电视剧插曲)"};
+    WZMusicModel *musicMolde2 = [[WZMusicModel alloc] initWithDict:dic2];
     
-    //添加播放按钮
-    CGFloat playButtonX = (ScreenWidth - CommonButtonW) * 0.5;
-    CGFloat playButtonY = ScreenHeight - CommonButtonH - DefaultMargin;
-    UIButton *playButton = [UIButton buttonWithFrame:CGRectMake(playButtonX, playButtonY, CommonButtonW, CommonButtonH) normalImageName:@"player_btn_pause_highlight" selectedImageName:@"player_btn_play_highlight" highlightedImageName:nil target:self action:@selector(playButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:playButton];
-    
-    
-    //添加上一曲切换按钮
-    CGFloat lastButtonX = buttonMargin;
-    CGFloat lastButtonY = playButtonY;
-    UIButton *lastButton = [UIButton buttonWithFrame:CGRectMake(lastButtonX, lastButtonY, CommonButtonW, CommonButtonH) normalImageName:@"player_btn_pre_normal" selectedImageName:nil highlightedImageName:@"player_btn_pre_highlight" target:self action:@selector(lastButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:lastButton];
-    
-    
-    //添加下一曲切换按钮
-    CGFloat nextButtonX = ScreenWidth - buttonMargin - CommonButtonW;
-    CGFloat nextButtonY = playButtonY;
-    UIButton *nextButton = [UIButton buttonWithFrame:CGRectMake(nextButtonX, nextButtonY, CommonButtonW, CommonButtonH) normalImageName:@"player_btn_next_normal" selectedImageName:nil highlightedImageName:@"player_btn_next_highlight" target:self action:@selector(nextButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:nextButton];
+    NSDictionary *dic3 = @{@"singerName":@"陈小春",@"songName":@"陈小春-主题曲"};
+    WZMusicModel *musicMolde3 = [[WZMusicModel alloc] initWithDict:dic3];
+    self.audioPlayer.musicList = @[musicMolde,musicMolde1,musicMolde2,musicMolde3];
     
 }
 
-//播放暂停按钮
-- (void)playButtonAction:(UIButton *)button {
-    NSLog(@"%s",__func__);
-}
 
-//上一曲切换按钮
-- (void)lastButtonAction:(UIButton *)button {
-    NSLog(@"%s",__func__);
-}
-
-//下一曲切换按钮
-- (void)nextButtonAction:(UIButton *)button {
-    NSLog(@"%s",__func__);
+- (WZAudioPlayer *)audioPlayer {
+    if (!_audioPlayer) {
+        _audioPlayer = [WZAudioPlayer audioPlayer];
+        [self.view addSubview:_audioPlayer];
+    }
+    return _audioPlayer;
 }
 @end

@@ -13,6 +13,13 @@
 		4C532DF11E0D130900909740 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C532DEF1E0D130900909740 /* AppDelegate.m */; };
 		4C532DF41E0D149000909740 /* WZMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C532DF31E0D149000909740 /* WZMainController.m */; };
 		4C532DF71E0D200F00909740 /* UIButton+WZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C532DF61E0D200F00909740 /* UIButton+WZAdd.m */; };
+		4C727A531E1C8C0A00C70FD2 /* WZAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C727A521E1C8C0A00C70FD2 /* WZAudioPlayer.m */; };
+		4C727A581E1C955900C70FD2 /* 蔡健雅-红色高跟鞋 (《爱情左右》电影主题曲).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C727A541E1C955900C70FD2 /* 蔡健雅-红色高跟鞋 (《爱情左右》电影主题曲).mp3 */; };
+		4C727A591E1C955900C70FD2 /* 陈粒-奇妙能力歌.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C727A551E1C955900C70FD2 /* 陈粒-奇妙能力歌.mp3 */; };
+		4C727A5A1E1C955900C70FD2 /* 陈翔-烟火 (《旋风少女》电视剧插曲).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C727A561E1C955900C70FD2 /* 陈翔-烟火 (《旋风少女》电视剧插曲).mp3 */; };
+		4C727A5B1E1C955900C70FD2 /* 陈小春-主题曲.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C727A571E1C955900C70FD2 /* 陈小春-主题曲.mp3 */; };
+		4C727A5E1E1C9EC300C70FD2 /* WZMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C727A5D1E1C9EC300C70FD2 /* WZMusicModel.m */; };
+		4C727A601E1CA27C00C70FD2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C727A5F1E1CA27C00C70FD2 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,15 @@
 		4C532DF51E0D200F00909740 /* UIButton+WZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WZAdd.h"; sourceTree = "<group>"; };
 		4C532DF61E0D200F00909740 /* UIButton+WZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WZAdd.m"; sourceTree = "<group>"; };
 		4C532DF91E0D224C00909740 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C727A511E1C8C0A00C70FD2 /* WZAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZAudioPlayer.h; sourceTree = "<group>"; };
+		4C727A521E1C8C0A00C70FD2 /* WZAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZAudioPlayer.m; sourceTree = "<group>"; };
+		4C727A541E1C955900C70FD2 /* 蔡健雅-红色高跟鞋 (《爱情左右》电影主题曲).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "蔡健雅-红色高跟鞋 (《爱情左右》电影主题曲).mp3"; sourceTree = "<group>"; };
+		4C727A551E1C955900C70FD2 /* 陈粒-奇妙能力歌.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "陈粒-奇妙能力歌.mp3"; sourceTree = "<group>"; };
+		4C727A561E1C955900C70FD2 /* 陈翔-烟火 (《旋风少女》电视剧插曲).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "陈翔-烟火 (《旋风少女》电视剧插曲).mp3"; sourceTree = "<group>"; };
+		4C727A571E1C955900C70FD2 /* 陈小春-主题曲.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "陈小春-主题曲.mp3"; sourceTree = "<group>"; };
+		4C727A5C1E1C9EC300C70FD2 /* WZMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZMusicModel.h; sourceTree = "<group>"; };
+		4C727A5D1E1C9EC300C70FD2 /* WZMusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZMusicModel.m; sourceTree = "<group>"; };
+		4C727A5F1E1CA27C00C70FD2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C727A601E1CA27C00C70FD2 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +87,10 @@
 		4C532DD31E0D121100909740 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C727A541E1C955900C70FD2 /* 蔡健雅-红色高跟鞋 (《爱情左右》电影主题曲).mp3 */,
+				4C727A551E1C955900C70FD2 /* 陈粒-奇妙能力歌.mp3 */,
+				4C727A561E1C955900C70FD2 /* 陈翔-烟火 (《旋风少女》电视剧插曲).mp3 */,
+				4C727A571E1C955900C70FD2 /* 陈小春-主题曲.mp3 */,
 				4C532DDF1E0D121100909740 /* Assets.xcassets */,
 				4C532DE11E0D121100909740 /* LaunchScreen.storyboard */,
 				4C532DE41E0D121100909740 /* Info.plist */,
@@ -101,6 +122,8 @@
 		4C532DEC1E0D130900909740 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4C727A5C1E1C9EC300C70FD2 /* WZMusicModel.h */,
+				4C727A5D1E1C9EC300C70FD2 /* WZMusicModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +142,8 @@
 		4C532DF01E0D130900909740 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4C727A511E1C8C0A00C70FD2 /* WZAudioPlayer.h */,
+				4C727A521E1C8C0A00C70FD2 /* WZAudioPlayer.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,6 +151,7 @@
 		4C532DF81E0D224C00909740 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C727A5F1E1CA27C00C70FD2 /* AVFoundation.framework */,
 				4C532DF91E0D224C00909740 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -191,8 +217,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C727A5A1E1C955900C70FD2 /* 陈翔-烟火 (《旋风少女》电视剧插曲).mp3 in Resources */,
 				4C532DE31E0D121100909740 /* LaunchScreen.storyboard in Resources */,
+				4C727A591E1C955900C70FD2 /* 陈粒-奇妙能力歌.mp3 in Resources */,
+				4C727A5B1E1C955900C70FD2 /* 陈小春-主题曲.mp3 in Resources */,
 				4C532DE01E0D121100909740 /* Assets.xcassets in Resources */,
+				4C727A581E1C955900C70FD2 /* 蔡健雅-红色高跟鞋 (《爱情左右》电影主题曲).mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +235,9 @@
 			files = (
 				4C532DF41E0D149000909740 /* WZMainController.m in Sources */,
 				4C532DD51E0D121100909740 /* main.m in Sources */,
+				4C727A5E1E1C9EC300C70FD2 /* WZMusicModel.m in Sources */,
 				4C532DF71E0D200F00909740 /* UIButton+WZAdd.m in Sources */,
+				4C727A531E1C8C0A00C70FD2 /* WZAudioPlayer.m in Sources */,
 				4C532DF11E0D130900909740 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +389,7 @@
 				4C532DE91E0D121100909740 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
