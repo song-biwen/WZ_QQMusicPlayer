@@ -16,9 +16,11 @@
 #define CommonButtonW 64
 #define CommonButtonH 64
 #define DefaultMargin 20
+#define TimeLabelWidth 60
 
 
 @interface WZAudioPlayer ()
+<AVAudioPlayerDelegate>
 @property (nonatomic, assign) BOOL isPlaying;//正在播放
 
 @property (nonatomic, weak) UIImageView *avatorImageView;
@@ -30,11 +32,18 @@
 @property (nonatomic, assign) NSInteger selectedIndex;
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+
+@property (nonatomic, strong) UISlider *slider;
+
+@property (nonatomic, weak) UILabel *currentTimeLabel;
+@property (nonatomic, weak) UILabel *orignalTimeLabel;
+
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation WZAudioPlayer
 
-+ (instancetype)audioPlayer {
++ (instancetype)WZAudioPlayer {
     return [[WZAudioPlayer alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
 
 }
@@ -49,6 +58,16 @@
     return self;
 }
 
+
+#pragma mark - AVAudioPlayerDelegate
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    if (self.isPlaying) {
+        [self playButtonAction:nil];
+    }
+    
+    self.slider.value = 0;
+    self.currentTimeLabel.text = [self stringFromTimeInterval:0];
+}
 
 - (void)setMusicList:(NSArray *)musicList {
     _musicList = musicList;
@@ -110,6 +129,48 @@
     UIButton *nextButton = [UIButton buttonWithFrame:CGRectMake(nextButtonX, nextButtonY, CommonButtonW, CommonButtonH) normalImageName:@"player_btn_next_normal" selectedImageName:nil highlightedImageName:@"player_btn_next_highlight" target:self action:@selector(nextButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:nextButton];
     
+    
+    //播放进度条
+    CGFloat sliderH = 50;
+    CGFloat sliderY = playButtonY - DefaultMargin - sliderH;
+    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(TimeLabelWidth,sliderY, ScreenWidth - TimeLabelWidth * 2, sliderH)];
+    [slider addTarget:self action:@selector(touchUp)
+          forControlEvents:UIControlEventValueChanged|UIControlEventTouchUpInside];
+    //当滑块上的按钮的位置发生改变，或者被按下时，我们需要让歌曲先暂停。
+    [slider addTarget:self action:@selector(touchDown)
+          forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchUpOutside|UIControlEventTouchCancel];
+    //当滑块被松开，按到外面了，或者取消时，我们需要让歌曲的播放从当前的时间开始播放。
+    [self addSubview:slider];
+    self.slider = slider;
+    
+    //当前播放时长
+    UILabel *currentTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, sliderY, TimeLabelWidth, sliderH)];
+    currentTimeLabel.textAlignment = NSTextAlignmentCenter;
+    currentTimeLabel.font = [UIFont systemFontOfSize:12];
+    [self addSubview:currentTimeLabel];
+    self.currentTimeLabel = currentTimeLabel;
+    
+    //总长度
+    UILabel *originalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(TimeLabelWidth + (ScreenWidth - TimeLabelWidth * 2), sliderY, TimeLabelWidth, sliderH)];
+    originalTimeLabel.textAlignment = NSTextAlignmentCenter;
+    originalTimeLabel.font = [UIFont systemFontOfSize:12];
+    [self addSubview:originalTimeLabel];
+    self.orignalTimeLabel = originalTimeLabel;
+}
+
+-(void)touchUp{
+    if ([self.audioPlayer isPlaying]){//判断歌曲是否正在播放，如果正在播放就让歌曲暂停，否则什么也不做。
+        [self.audioPlayer pause];//在这里我们需要调用歌曲的暂停方法，实现歌曲的暂停。
+        self.timer.fireDate = [NSDate distantFuture];
+    }
+}
+
+-(void)touchDown{
+    self.audioPlayer.currentTime = self.slider.value * self.audioPlayer.duration;//把歌曲当前播放的时间设置为进度条的值
+    if (![self.audioPlayer isPlaying]) {
+        [self.audioPlayer play];
+        self.timer.fireDate = [NSDate distantPast];
+    }
 }
 
 //播放暂停按钮
@@ -129,12 +190,15 @@
         [self.playButton setImage:[UIImage imageNamed:@"player_btn_pause_normal"] forState:UIControlStateNormal];
         [self.playButton setImage:[UIImage imageNamed:@"player_btn_pause_highlight"] forState:UIControlStateHighlighted];
         [self.audioPlayer play];
+        self.timer.fireDate = [NSDate distantPast];
+        
     }else {
         
         //暂停
         [self.playButton setImage:[UIImage imageNamed:@"player_btn_play_normal"] forState:UIControlStateNormal];
         [self.playButton setImage:[UIImage imageNamed:@"player_btn_play_highlight"] forState:UIControlStateHighlighted];
         [self.audioPlayer pause];
+        self.timer.fireDate=[NSDate distantFuture];
     }
 }
 
@@ -197,13 +261,56 @@
         WZMusicModel *musicModel = self.musicList[self.selectedIndex];
         NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:musicModel.songName ofType:@"mp3"]];
         _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        _audioPlayer.delegate = self;
         [_audioPlayer prepareToPlay];
+        
+        self.orignalTimeLabel.text = [self stringFromTimeInterval:_audioPlayer.duration];
+        self.currentTimeLabel.text = [self stringFromTimeInterval:_audioPlayer.currentTime];
+        self.slider.minimumValue = 0;
+        self.slider.maximumValue = 1;
     }
     return _audioPlayer;
+}
+
+- (NSString *)stringFromTimeInterval:(NSTimeInterval)timeInterval {
+    NSMutableString *mutableStr = [[NSMutableString alloc] init];
+    int second = (int)timeInterval % 60;
+    int min = (int)timeInterval/60;
+    
+    if (min < 10) {
+        [mutableStr appendString:[NSString stringWithFormat:@"0%d",min]];
+    }else {
+        [mutableStr appendString:[NSString stringWithFormat:@"%d",min]];
+    }
+    
+    [mutableStr appendString:@":"];
+    
+    if (second < 10) {
+        [mutableStr appendString:[NSString stringWithFormat:@"0%d",second]];
+    }else {
+        [mutableStr appendString:[NSString stringWithFormat:@"%d",second]];
+    }
+    return [mutableStr copy];
+}
+
+
+- (NSTimer *)timer {
+    if (!_timer) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
+    }
+    return _timer;
+}
+
+- (void)updateProgress {
+    self.currentTimeLabel.text = [self stringFromTimeInterval:self.audioPlayer.currentTime];
+    self.slider.value = self.audioPlayer.currentTime/self.audioPlayer.duration;
 }
 
 - (void)dealloc {
     [self.displayLink invalidate];
     self.displayLink = nil;
+    
+    [self.timer invalidate];
+    self.timer = nil;
 }
 @end

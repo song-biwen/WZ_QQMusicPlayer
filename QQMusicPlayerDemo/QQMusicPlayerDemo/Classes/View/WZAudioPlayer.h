@@ -10,6 +10,6 @@
 
 @interface WZAudioPlayer : UIView
 
-+ (instancetype)audioPlayer;
++ (instancetype)WZAudioPlayer;
 @property (nonatomic, strong) NSArray *musicList;
 @end

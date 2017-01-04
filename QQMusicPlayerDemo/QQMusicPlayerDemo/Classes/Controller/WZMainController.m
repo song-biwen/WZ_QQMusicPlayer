@@ -43,7 +43,7 @@
 
 - (WZAudioPlayer *)audioPlayer {
     if (!_audioPlayer) {
-        _audioPlayer = [WZAudioPlayer audioPlayer];
+        _audioPlayer = [WZAudioPlayer WZAudioPlayer];
         [self.view addSubview:_audioPlayer];
     }
     return _audioPlayer;
