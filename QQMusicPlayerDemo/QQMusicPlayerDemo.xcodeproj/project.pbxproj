@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0AB8CA1E24B12B0052FD8D /* WZSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AB8C91E24B12B0052FD8D /* WZSecondController.m */; };
+		4C0AB8CD1E24B77D0052FD8D /* WZAnimationControllerForPresented.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AB8CC1E24B77D0052FD8D /* WZAnimationControllerForPresented.m */; };
+		4C0AB8D01E24B78E0052FD8D /* WZAnimationControllerForDismissed.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AB8CF1E24B78E0052FD8D /* WZAnimationControllerForDismissed.m */; };
 		4C532DD51E0D121100909740 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C532DD41E0D121100909740 /* main.m */; };
 		4C532DE01E0D121100909740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C532DDF1E0D121100909740 /* Assets.xcassets */; };
 		4C532DE31E0D121100909740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C532DE11E0D121100909740 /* LaunchScreen.storyboard */; };
@@ -23,6 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0AB8C81E24B12B0052FD8D /* WZSecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZSecondController.h; sourceTree = "<group>"; };
+		4C0AB8C91E24B12B0052FD8D /* WZSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZSecondController.m; sourceTree = "<group>"; };
+		4C0AB8CB1E24B77D0052FD8D /* WZAnimationControllerForPresented.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZAnimationControllerForPresented.h; sourceTree = "<group>"; };
+		4C0AB8CC1E24B77D0052FD8D /* WZAnimationControllerForPresented.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZAnimationControllerForPresented.m; sourceTree = "<group>"; };
+		4C0AB8CE1E24B78E0052FD8D /* WZAnimationControllerForDismissed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZAnimationControllerForDismissed.h; sourceTree = "<group>"; };
+		4C0AB8CF1E24B78E0052FD8D /* WZAnimationControllerForDismissed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZAnimationControllerForDismissed.m; sourceTree = "<group>"; };
 		4C532DD01E0D121100909740 /* QQMusicPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusicPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C532DD41E0D121100909740 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C532DDF1E0D121100909740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +124,8 @@
 			children = (
 				4C532DF21E0D149000909740 /* WZMainController.h */,
 				4C532DF31E0D149000909740 /* WZMainController.m */,
+				4C0AB8C81E24B12B0052FD8D /* WZSecondController.h */,
+				4C0AB8C91E24B12B0052FD8D /* WZSecondController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -135,6 +146,10 @@
 				4C532DEF1E0D130900909740 /* AppDelegate.m */,
 				4C532DF51E0D200F00909740 /* UIButton+WZAdd.h */,
 				4C532DF61E0D200F00909740 /* UIButton+WZAdd.m */,
+				4C0AB8CB1E24B77D0052FD8D /* WZAnimationControllerForPresented.h */,
+				4C0AB8CC1E24B77D0052FD8D /* WZAnimationControllerForPresented.m */,
+				4C0AB8CE1E24B78E0052FD8D /* WZAnimationControllerForDismissed.h */,
+				4C0AB8CF1E24B78E0052FD8D /* WZAnimationControllerForDismissed.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -234,8 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C532DF41E0D149000909740 /* WZMainController.m in Sources */,
+				4C0AB8D01E24B78E0052FD8D /* WZAnimationControllerForDismissed.m in Sources */,
+				4C0AB8CA1E24B12B0052FD8D /* WZSecondController.m in Sources */,
 				4C532DD51E0D121100909740 /* main.m in Sources */,
 				4C727A5E1E1C9EC300C70FD2 /* WZMusicModel.m in Sources */,
+				4C0AB8CD1E24B77D0052FD8D /* WZAnimationControllerForPresented.m in Sources */,
 				4C532DF71E0D200F00909740 /* UIButton+WZAdd.m in Sources */,
 				4C727A531E1C8C0A00C70FD2 /* WZAudioPlayer.m in Sources */,
 				4C532DF11E0D130900909740 /* AppDelegate.m in Sources */,

@@ -9,8 +9,13 @@
 #import "WZMainController.h"
 #import "WZAudioPlayer.h"
 #import "WZMusicModel.h"
+#import "WZSecondController.h"
+#import "WZAnimationControllerForDismissed.h"
+#import "WZAnimationControllerForPresented.h"
 
 @interface WZMainController ()
+<WZAudioPlayerDelegate,UIViewControllerTransitioningDelegate>
+
 @property (nonatomic, strong) WZAudioPlayer *audioPlayer;
 @end
 
@@ -37,13 +42,39 @@
     NSDictionary *dic3 = @{@"singerName":@"陈小春",@"songName":@"陈小春-主题曲"};
     WZMusicModel *musicMolde3 = [[WZMusicModel alloc] initWithDict:dic3];
     self.audioPlayer.musicList = @[musicMolde,musicMolde1,musicMolde2,musicMolde3];
-    
 }
 
+#pragma makr - UIViewControllerTransitioningDelegate
+//转场出现的对象
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    WZAnimationControllerForPresented *presentedObject = [[WZAnimationControllerForPresented alloc] init];
+    return presentedObject;
+}
+
+
+//转场消失的对象
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    WZAnimationControllerForDismissed *dismissedObject = [[WZAnimationControllerForDismissed alloc] init];
+    return dismissedObject;
+}
+
+#pragma mark - WZAudioPlayerDelegate
+- (void)audioPlayer:(WZAudioPlayer *)player didClickedAvatorImageView:(UIImageView *)avatorImageView {
+    WZSecondController *secondVc = [[WZSecondController alloc] init];
+    secondVc.avatorImage = avatorImageView.image;
+    
+    
+    //自定义转场效果
+    secondVc.modalPresentationStyle = UIModalPresentationCustom;
+    //设置转场代理
+    secondVc.transitioningDelegate = self;
+    [self presentViewController:secondVc animated:YES completion:nil];
+}
 
 - (WZAudioPlayer *)audioPlayer {
     if (!_audioPlayer) {
         _audioPlayer = [WZAudioPlayer WZAudioPlayer];
+        _audioPlayer.delegate = self;
         [self.view addSubview:_audioPlayer];
     }
     return _audioPlayer;

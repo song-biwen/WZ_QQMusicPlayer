@@ -73,7 +73,16 @@
     _musicList = musicList;
     self.selectedIndex = 0;
     [self changeSingerAvatorImage];
-    [self playButtonAction:self.playButton];
+//    [self playButtonAction:self.playButton];
+}
+
+
+- (void)tapGestureAction:(UITapGestureRecognizer *)tapGesture {
+    
+    NSLog(@"%s",__func__);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(audioPlayer:didClickedAvatorImageView:)]) {
+        [self.delegate audioPlayer:self didClickedAvatorImageView:self.avatorImageView];
+    }
 }
 
 - (void)setupUI {
@@ -104,7 +113,6 @@
     avatorImageView.image = [UIImage imageNamed:@"蔡健雅"];
     [avatorBgImageView addSubview:avatorImageView];
     self.avatorImageView = avatorImageView;
-    
     
     //计算上一曲 播放 下一曲按钮之间的间距
     CGFloat buttonMargin = (ScreenWidth - CommonButtonW * 3) * 1.0 / 4;
@@ -156,6 +164,11 @@
     originalTimeLabel.font = [UIFont systemFontOfSize:12];
     [self addSubview:originalTimeLabel];
     self.orignalTimeLabel = originalTimeLabel;
+    
+    //给视图添加点击事件
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+    tapGesture.numberOfTapsRequired = 1;
+    [self addGestureRecognizer:tapGesture];
 }
 
 -(void)touchUp{
