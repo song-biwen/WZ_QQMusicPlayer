@@ -73,7 +73,7 @@
     _musicList = musicList;
     self.selectedIndex = 0;
     [self changeSingerAvatorImage];
-//    [self playButtonAction:self.playButton];
+    [self playButtonAction:self.playButton];
 }
 
 
